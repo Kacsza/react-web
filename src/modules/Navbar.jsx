@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import './Navbar.css'
 
 function Navbar(){
     const [isOpen, SetIsOpen] = useState(false);
@@ -19,18 +20,28 @@ function Navbar(){
         }
     })
     return(
-        <header>
+        <header className="header">
             <nav className="nav">
-                <div className="dropdown" ref={DropdownRef}>
-                    <button onClick={toggleDropdown}>Menu</button>
-                    {isOpen && (
-                        <div className="dropdown-content">
-                            <a href="#home">test1</a>
-                            <a href="#about">test2</a>
-                            <a href="#test">test3</a>
-                        </div>
-                    )}
-                </div>
+                <ul className="dropdown" ref={DropdownRef}>
+                    <li>
+                        <button onClick={toggleDropdown}>Menu</button>
+                        {isOpen && (
+                            <div className="dropdown-menu">
+                                <div className="dropdown-menu-inner">
+                                    <a href="#home" className="dropdown-item">
+                                        <span className="dropdown-item-text">test1</span>
+                                    </a>
+                                    <a href="#about" className="dropdown-item">
+                                        <span className="dropdown-item-text">test2</span>
+                                    </a>
+                                    <a href="#test" className="dropdown-item">
+                                        <span className="dropdown-item-text">test3</span>
+                                    </a>
+                                </div>
+                            </div>
+                        )}
+                    </li>
+                </ul>
             </nav>
         </header>
     )
