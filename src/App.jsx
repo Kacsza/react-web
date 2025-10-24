@@ -8,13 +8,17 @@ function App() {
     <>
     <Navbar />
     <main>
-      <Container>
+      <Container >
+        <h2>PS: Aleksio nie istnieje</h2>
+      </Container>
+      <Container className="span-2">
         <h1>Nic tu ni ma</h1>
         <p>Stronka będzie updatowana w miarę dalszej nauki.</p>
-        <p>Nawet nie wiem co tu dodać</p>
+        <p>Nawet nie wiem co tu dodać</p>  
       </Container>
       <Container>
-        <h2>PS: Aleksio nie istnieje</h2>
+        <h1>Nowy kontener</h1>
+        <p>To jest nowy kontener dodany do siatki.</p>
       </Container>
     </main>
     </>

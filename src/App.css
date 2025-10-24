@@ -1,7 +1,25 @@
-main{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    gap: 2rem;
+    padding: 120px 40px 40px 40px;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    min-height: 300px; 
+    margin: 0; 
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-3 {
+    grid-column: span 3;
+}
+
+.row-span-2 {
+    grid-row: span 2;
 }

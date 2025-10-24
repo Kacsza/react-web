@@ -1,7 +1,11 @@
 import './Container.css';
-const Container = ({ children }) => {
+
+const Container = ({ children, gridArea, className = '' }) => {
   return (
-    <div className="container">
+    <div 
+      className={`container ${className}`} 
+      style={gridArea ? { gridArea } : undefined}
+    >
       {children}
     </div>
   );
