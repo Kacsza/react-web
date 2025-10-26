@@ -23,3 +23,26 @@ main {
 .row-span-2 {
     grid-row: span 2;
 }
+
+/* Responsive: stack containers on narrow viewports */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 100px 16px 24px; /* keep space for fixed navbar, reduce side padding */
+  }
+
+  .container {
+    width: 100%;
+    min-height: 180px;
+    padding: 16px;
+    margin: 0;
+  }
+
+  .span-2,
+  .span-3,
+  .row-span-2 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
