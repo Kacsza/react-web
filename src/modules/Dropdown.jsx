@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import './Dropdown.css'
 
-export default function Dropdown({ children, buttonText = "Menu" }){
+export function Dropdown({ children, buttonText = "Menu" }){
     // Zarządzanie stanem widoczności dropdownu
     const [isOpen, SetIsOpen] = useState(false);
     const toggleDropdown = () =>{
