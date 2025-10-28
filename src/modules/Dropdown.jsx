@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import {Dropdown, DropdownItem} from "./dropdown";
-import './Navbar.css'
+import './Dropdown.css'
 
-function Navbar(){
+export default function Dropdown({ children, buttonText = "Menu" }){
     // Zarządzanie stanem widoczności dropdownu
     const [isOpen, SetIsOpen] = useState(false);
     const toggleDropdown = () =>{
@@ -26,15 +25,22 @@ function Navbar(){
         }
     })
     return(
-        <header className="header">
-            <nav className="nav">
-                <Dropdown buttonText="Menu">
-                    <DropdownItem href="#home" text="test1" />
-                    <DropdownItem href="#about" text="test2" />
-                    <DropdownItem href="#test" text="test3" />
-                </Dropdown>
-            </nav>
-        </header>
+        <div className="dropdown" ref={DropdownRef}>
+            <button onClick={toggleDropdown}>Menu</button>
+            {isOpen && (
+                <div className="dropdown-menu">
+                    <div className="dropdown-menu-inner">
+                        {children}
+                    </div>
+                </div>
+            )}
+        </div>
     )
 }
-export default Navbar
+export function DropdownItem({ text, href = "#" ,onClick }){ 
+    return(
+        <a href={href} className="dropdown-item">
+            <span className="dropdown-item-text">{text}</span>
+        </a>
+    )
+};
