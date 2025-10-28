@@ -26,7 +26,7 @@ export function Dropdown({ children, buttonText = "Menu" }){
     })
     return(
         <div className="dropdown" ref={DropdownRef}>
-            <button onClick={toggleDropdown}>Menu</button>
+            <button onClick={toggleDropdown}>{buttonText}</button>
             {isOpen && (
                 <div className="dropdown-menu">
                     <div className="dropdown-menu-inner">
