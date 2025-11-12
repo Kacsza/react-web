@@ -4,10 +4,12 @@ main {
     gap: 2rem;
     padding: 120px 40px 40px 40px;
     margin: 0;
+    min-height: calc(100vh - 120px); /* ensure grid fills available viewport below navbar */
+    place-items: center; /* center containers horizontally and vertically */
 }
 
 .container {
-    width: 100%;
+    width: 25%;
     min-height: 300px; 
     margin: 0; 
 }
@@ -30,6 +32,8 @@ main {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 100px 16px 24px; /* keep space for fixed navbar, reduce side padding */
+    align-items: start;   /* stack vertically from the top */
+    justify-items: center; /* keep containers centered horizontally */
   }
 
   .container {
