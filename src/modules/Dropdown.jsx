@@ -37,7 +37,7 @@ export function Dropdown({ children, buttonText = "Menu" }){
         </div>
     )
 }
-export function DropdownItem({ text, href = "#" ,onClick }){ 
+export function DropdownItem({ text, href = "#" }){ 
     return(
         <a href={href} className="dropdown-item">
             <span className="dropdown-item-text">{text}</span>
