@@ -13,7 +13,30 @@ main {
     min-height: 300px; 
     margin: 0; 
 }
-
+input {
+    width: 30em;
+    height: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    background-color: var(--bg-color);
+    color: var(--font-clr);
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    text-align: center;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
 .span-2 {
     grid-column: span 2;
 }

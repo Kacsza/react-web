@@ -1,16 +1,32 @@
-import Navbar from './modules/Navbar';
+import {useState} from 'react';
+import { useNavigate } from 'react-router';
 import Container from './modules/Container';
 import './App.css';
 
 function App() {
+  const [login,setLogin] = useState("");
+  const [password,setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin= (event) => {
+    event.preventDefault();
+    console.log("Login:", login);
+    console.log("Password:", password);
+    if(login.trim() === "" || password.trim() === ""){
+      alert("Both fields are required.");
+      return;
+    }
+    navigate("/welcome",{state:login});
+  }
   return (
     <>
-    <Navbar />
     <main>
       <Container>
-        <h1>Nic tu ni ma</h1>
-        <p>Stronka będzie updatowana w miarę dalszej nauki.</p>
-        <p>Nawet nie wiem co tu dodać</p>  
+        <form onSubmit={handleLogin}>
+          <input type="text" placeholder='login' value={login} onChange={(event)=>{setLogin(event.target.value)}} /><br/>
+          <input type="password" placeholder='password' value={password} onChange={(event)=>{setPassword(event.target.value)}} /><br/>
+          <button type="submit">Zaloguj</button>
+        </form>
       </Container>
     </main>
     </>
