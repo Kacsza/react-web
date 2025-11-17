@@ -5,7 +5,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router';
 import App from './site/App.jsx';
 
 //lazy load komponentów
-const LazyWelcome = lazy(() => import('./site/Welcome.jsx'));
+const Welcome = lazy(() => import('./site/Welcome.jsx'));
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -13,9 +13,9 @@ const router = createBrowserRouter([
     path: "/welcome",
     element: (
       //obsługa lazy loadingu
-      <Suspense fallback={<div>Ładowanie podstrony...</div>}>
-        <LazyWelcome />
-      </Suspense>
+      //<Suspense fallback={<div>Ładowanie podstrony...</div>}>
+        <Welcome />
+      //</Suspense>
     ),
   },
   { path: "*", element: <Navigate to="/" replace /> },

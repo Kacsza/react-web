@@ -25,10 +25,14 @@ input {
     font-size: 16px;
     text-align: center;
 }
+input::placeholder {
+    color: var(--font-clr);
+    opacity: 0.7;
+}
 button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: var(--accept-bg);
     color: white;
     border: none;
     border-radius: 12px;
@@ -36,6 +40,12 @@ button {
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s ease;
+}
+button:hover {
+    background-color: #50ff58;
+    color: black;
+    transition: all 0.5s ease;
 }
 .span-2 {
     grid-column: span 2;

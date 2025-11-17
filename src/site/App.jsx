@@ -29,14 +29,14 @@ function App() {
               value={login}
               onChange={(event) => setLogin(event.target.value)}
             />
-            <br />
+            <br/>
             <input
               type="password"
               placeholder="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
-            <br />
+            <br/>
             <button type="submit">Zaloguj</button>
           </form>
         </Container>
