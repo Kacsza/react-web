@@ -16,7 +16,7 @@ function Welcome() {
     <>
       <main>
         <Container>
-          <h1>Welcome, {login}</h1>
+          <h1 className="text-3xl font-bold">Welcome, {login}</h1>
         </Container>
       </main>
     </>
