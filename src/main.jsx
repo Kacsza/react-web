@@ -1,21 +1,21 @@
 import { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router';
+import { createHashRouter, Navigate, RouterProvider } from 'react-router';
 import App from './site/App.jsx';
 
-//lazy load komponentów
+// lazy load komponentów
 const Welcome = lazy(() => import('./site/Welcome.jsx'));
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   { path: "/", element: <App /> },
   {
     path: "/welcome",
+    // wrap lazy-loaded route component in Suspense
     element: (
-      //obsługa lazy loadingu
-      //<Suspense fallback={<div>Ładowanie podstrony...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Welcome />
-      //</Suspense>
+      </Suspense>
     ),
   },
   { path: "*", element: <Navigate to="/" replace /> },
