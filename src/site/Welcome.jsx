@@ -1,6 +1,8 @@
 import { useLocation, Navigate } from 'react-router';
 import Container from '../modules/Container';
 import './App.css';
+import Navbar from '../modules/Navbar';
+import Footer from '../modules/footer';
 
 function Welcome() {
   const location = useLocation();
@@ -14,11 +16,13 @@ function Welcome() {
 
   return (
     <>
+    <Navbar />
       <main>
         <Container>
           <h1 className="text-3xl font-bold">Welcome, {login}</h1>
         </Container>
       </main>
+      <Footer />
     </>
   );
 }
