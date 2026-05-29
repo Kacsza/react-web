@@ -4,6 +4,7 @@ import './Navbar.css'
 function Navbar(){
     return(
         <header className="header">
+            <h1 className="text-white text-center">Strona Logowania</h1><br/>
             <nav className="nav">
                 <Dropdown buttonText="Menu">
                     <DropdownItem href="#home" text="test1" />

@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import Container from '../modules/Container';
+import Navbar from '../modules/Navbar';
+import Footer from '../modules/footer';
 import './App.css';
+
 
 function App() {
   const [login, setLogin] = useState("");
@@ -15,11 +18,18 @@ function App() {
       return;
     }
     //przekazanie loginu w stanie nawigacji i przekierowanie do podstrony
-    navigate("/welcome", { state: { login } });
+    if (login ==="admin" && password ==="admin") {
+      navigate("/welcome", { state: { login } });
+    } else if (login !=="admin") {
+      alert("Invalid login. Please try again.");
+    }else {
+      alert("Invalid password. Please try again.");
+    }
   };
 
   return (
     <>
+      <Navbar />
       <main>
         <Container>
           <form onSubmit={handleLogin}>
@@ -37,10 +47,11 @@ function App() {
               onChange={(event) => setPassword(event.target.value)}
             />
             <br/>
-            <button type="submit">Zaloguj</button>
+            <button type="submit" className='submit'>Zaloguj</button>
           </form>
         </Container>
       </main>
+      <Footer />
     </>
   );
 }
