@@ -1,4 +1,4 @@
-main{
+.contact {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,7 +6,7 @@ main{
     padding: 2rem;
 }
 
-.home {
+.contact-card {
     width: 100%;
     max-width: 900px;
     background-color: var(--bg-color);
@@ -16,4 +16,27 @@ main{
     text-align: center;
     padding: 2rem;
     color: var(--font-clr);
+}
+
+.contact-card h1 {
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.contact-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-card li {
+    margin: 0.75rem 0;
+}
+
+.contact-card a {
+    color: var(--font-clr);
+    text-decoration: underline;
 }

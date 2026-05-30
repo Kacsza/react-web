@@ -1,7 +1,8 @@
 :root{
-    --font-clr: #fefeff ;
+    --font-clr: #ffffff ;
     --bg-color: rgba(51, 51, 51, 0.9);
     --accept-bg: #4CAF50;
+    --secondary-bg: rgba(128, 128, 128, 0.5);
 }
 * {
     margin: 0;
